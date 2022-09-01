@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dom Manupulation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+   <style type="text/css">
+   .c-modal{
+    background: gray;
+    width: 600px;
+    margin: auto;
+    box-shadow: box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: none;
+   }
+   </style>
+   <style type="text/css">
+      .card{
+        width: 400px;
+        margin: 60px auto;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border: none;
+      }
+      .display{
+        width: 100%;
+        display: block;
+        padding: 14px;
+        font-size: 18px;
+        background-color: #A5F1E9;
+        margin-bottom: 16px;
+        border: none;
+      }
+      .btns{
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        column-gap: 10px;
+        row-gap: 10px;
+      }
+      input[type="button"]{
+        background-color: A5F1E9;
+        padding: 6px;
+        font-size: 18px;
+        border: none;
+        border-radius: 2px;
+      }
+      input[type="button"]:hover{
+        cursor: pointer;
+        background-color: #EC7272;
+      }
+   </style>
+  </head>
+  <body>
+
+    <!-- preloader code start -->
+
+      <div id="preloader mt-5 p-3">
+        <div class="circle"></div>
+      </div>
+
+
+    <!-- preloader code end -->
+    
+<!-- pick html code -->
+
+
+      <div class="container m-5 p-5">
+        <div class="row">
+          <div class="col-md-4 offset-2">
+            <div class="card p-4 m-4">
+              <h1>01</h1>
+              <p class="text">Developers use Lorem ipsum text to fill in a web page template. Having finished the template setup you should replace this text with unique content relating to the site theme. Otherwise, search systems may consider the resource irrelevant or duplicate.</p>
+              <button id='btn' onclick="this.innerHTML='Downloading...'">Download</button>
+            </div>
+          </div>
+           <div class="col-md-4">
+            <div class="card p-4 m-4">
+              <h1>01</h1>
+              <p class="text">Developers use Lorem ipsum text to fill in a web page template. Having finished the template setup you should replace this text with unique content relating to the site theme. Otherwise, search systems may consider the resource irrelevant or duplicate.</p>
+              <button id='btn'>Download</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--pick end html cpde -->
+
+<!-- increment and decrement code start -->
+
+     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh">
+       <div class="row">
+         <div class="col-md-4 ">
+           <div class="card m-5 p-5 text-center" style="width: 400px">
+             <h1 id="Value">10</h1>
+             <div>
+               <button class="btn btn-md btn-primary">Increment</button>
+               <button class="btn btn-md btn-danger">Decrement</button>
+             </div>
+           </div>
+           <small id="warning"class="text-danger"></small>
+         </div>
+       </div>
+     </div>
+
+
+<!-- increment and decrement code end -->
+
+<!-- C-Modal code start -->
+
+   <div class="container m-5">
+    <button class="btn btn-md btn-info b">Click Here</button>
+    <div>
+      <div class="c-modal p-5">
+      <p> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <button class="btn btn-md btn-info">Modal Button</button>
+    </div>
+    </div>
+   </div>
+
+
+<!-- C-Modal code End -->
+
+        <!-- Calculator code start -->
+
+      <div class="card mt-5 p-3">
+
+        <!-- display section -->
+
+        <form name="calculator">
+          <input type="text" name="result" class="display">
+
+            <!-- btn section -->
+         
+        <div class="btns">
+           
+      <input type="button" value="cos" onclick="calculator.result.value=Math.tan(calculator.result.value)">
+      <input type="button" value="log" onclick="calculator.result.value=Math.log(calculator.result.value)">
+      <input type="button" value="(" name="" onclick="calculator.result.value+='('">
+      <input type="button" value=")" name="" onclick="calculator.result.value+=')'">
+      <input type="button" value="DEG" name="" onclick="calcdeg()">
+
+      
+      <input type="button" value="Sin" onclick="calculator.result.value=Math.sin(calculator.result.value)">
+      <input type="button" value="tan" onclick="calculator.result.value=Math.cos(calculator.result.value)">
+      <input type="button" value="√x" onclick="calcRoot()">
+      <input type="button" value="π" name=""  OnClick="calcPI()">
+      <input type="button" value="AC" name="" onclick="calculator.result.value=''">
+
+      
+      <input type="button"value="Del" onclick="calcDel()">
+      <input type="button" value="%" name="" onclick="calculator.result.value+='%'">
+      <input type="button" value="In" name="" onclick="calculator.result.value+='In'">
+      <input type="button" value="INV" name="" onclick="calculator.result.value+='INV'">
+      <input type="button" value="/" name="" onclick="calculator.result.value+='/'">
+
+      
+      <input type="button" value="7" name="" onclick="calculator.result.value+='7'">
+      <input type="button" value="8" name="" onclick="calculator.result.value+='8'">
+      <input type="button" value="9" name="" onclick="calculator.result.value+='9'">
+      <input type="button" value="n!" name="" onclick="calculator.result.value+='n!'">
+      <input type="button" value="*" name="" onclick="calculator.result.value+='*'">
+
+      
+      <input type="button" value="4" name="" onclick="calculator.result.value+='4'">
+      <input type="button" value="5" name="" onclick="calculator.result.value+='5'">
+      <input type="button" value="6" name="" onclick="calculator.result.value+='6'">
+      <input type="button" value="e" name="" OnClick="calcE()">
+      <input type="button" value="-" name="" onclick="calculator.result.value+='-'">
+
+      
+      <input type="button" value="1" name="" onclick="calculator.result.value+='1'">
+      <input type="button" value="2" name="" onclick="calculator.result.value+='2'">
+      <input type="button" value="3" name="" onclick="calculator.result.value+='3'">
+      <input type="button" value="EXP" name="" onclick="calculator.result.value+='EXP'">
+      <input type="button" value="+" name="" onclick="calculator.result.value+='+'">
+
+      
+      <input type="button" value="," name="" onclick="calculator.result.value+=','">
+      <input type="button" value="0" name="" onclick="calculator.result.value+='0'">
+      <input type="button" value="." name="" onclick="calculator.result.value+='.'">
+      <input type="button" value="^" name="" OnClick="calcpow()">
+      <input type="button" value="=" name="" onclick="calculator.result.value=eval(calculator.result.value)">
+      
+
+         </div>
+        </form>
+      </div>
+
+        <!-- Calculator code end -->
+
+        <!-- love calculator code start -->
+ <section class="section-4 bg-danger">
+        <div class="container">
+            <div class="love-area text-center"> 
+                <i class="fa fa-heart"></i>
+                <h3>Love Calculator</h3>
+                <form action="">
+                    <input type="text" placeholder="Your Name" id="yn">
+                    <input type="text" placeholder="Your Lover Name" id="ln">
+                </form>
+                <button type="button" value="CALCULATE" onclick="love()" id="calculat">CALCULATE</button>
+                <p class="re-result" id="printr">You relationship result here</p>
+                <p class="text-center" style="font-weight: bold;" id="lovecoment"></p>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- love calculator code end -->
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var b = document.getElementsByClassName('b')[0];
+
+
+         b.addEventListener('click',function(){
+
+         document.getElementsByClassName('c-modal')[0].style.display='block';
+    })
+    </script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
